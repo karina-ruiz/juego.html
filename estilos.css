@@ -17,9 +17,8 @@ background-color: #F9E79F;
     box-sizing: border-box;
     border-radius: 20px;
     display: flex;
-}
-p {
-    color: #F9E79F;
+    justify-content: center;
+    align-items: center;
 }
 .tarjeta-de-mokepon img {
     width: 80px;
@@ -55,4 +54,26 @@ background-color: rgb(223, 223, 179);
     height: 5cm;
     border-radius: 50%;
     align-items: center;
+}
+#boton-mascota {
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: black;
+    margin-top: 2cm;
+}
+#seleccionar-ataque {
+    flex-direction: column;
+    align-items: center;
+}
+.boton-de-ataque {
+    background-color: rgb(230, 230, 150);
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: transparent;
+    width: 100px;
+    color: white;
 }
