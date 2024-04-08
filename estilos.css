@@ -1,0 +1,58 @@
+body {
+background-color: #F9E79F;
+}
+
+#seleccionar-mascota {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tarjeta-de-mokepon {
+    width: 5cm;
+    height: 3cm;
+    border-radius: 30px;
+    background-color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    display: flex;
+}
+p {
+    color: #F9E79F;
+}
+.tarjeta-de-mokepon img {
+    width: 80px;
+}
+input {
+    display: none;
+    
+}
+.tarjetas {
+    display: flex;
+    gap: 30px;
+}
+.titulo {
+background-color: rgb(223, 223, 179);
+}
+.titulo-dos {
+    background-color: rgb(223, 223, 179);
+}
+.imagen-pepe {
+    width: 5cm;
+    height: 5cm;
+    border-radius: 50%;
+    align-items: center;
+}
+.imagen-pedro {
+    width: 5cm;
+    height: 5cm;
+    border-radius: 50%;
+    align-items: center;
+}
+.imagen-pedro {
+    width: 5cm;
+    height: 5cm;
+    border-radius: 50%;
+    align-items: center;
+}

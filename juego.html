@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JUEGO</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <section id="seleccionar-mascota">
+        <h1 class="titulo">LUCHANDO POR EL NIDO🐥🔥💦🪴</h1>
+        <h2 class="titulo-dos">Elije a tu Pollo</h2>
+        <div class="tarjetas">
+        <label class="tarjeta-de-mokepon" for="Pepe">Pollo Pepe</label>
+        <input type="radio" name="mascota" id="Pepe">
+
+        <label class="tarjeta-de-mokepon" for="Pedro">Pollo Pedro</label>
+        <input type="radio" name="mascota" id="Pedro">
+
+        <label class="tarjeta-de-mokepon" for="Luis">Pepe Luis</label>
+        <input type="radio" name="mascota" id="Luis">
+        </div>
+        <button id="boton-mascota">Seleccionar    
+        </button>
+    </section>
+    <section id="seleccionar-ataque">
+        <h1 class="titulo">LUCHANDO POR EL NIDO🐥🔥💦🪴</h1>
+        <h1>ATAQUE</h1>
+        <h2>Elije tu ataque</h2>
+        <p>Tu Pollo <span id="mascota jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
+        <p>El Pollo <span id="mascota del enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
+        <p>
+        <button id="boton-fuego">FUEGO🔥</button>
+        <button id="boton-agua">AGUA💦</button>
+        <button id="boton-tierra">TIERRA🪴</button>
+        </p>
+    </section>
+    <section id="mensajes">
+    </section>
+    <section id="reiniciar">
+        <button id="boton-reiniciar">Reiniciar</button>
+    </section>
+    <script src="juego.js"></script>
+</body>
+</html>
