@@ -8,6 +8,10 @@ background-color: #F9E79F;
     justify-content: center;
     align-items: center;
 }
+#seleccionar-ataque {
+    text-align: center;
+    background-color: blueviolet;
+}
 .tarjeta-de-mokepon {
     width: 5cm;
     height: 3cm;
@@ -63,10 +67,6 @@ background-color: rgb(223, 223, 179);
     border: 2px solid white;
     color: black;
     margin-top: 2cm;
-}
-#seleccionar-ataque {
-    flex-direction: column;
-    align-items: center;
 }
 .boton-de-ataque {
     background-color: rgb(230, 230, 150);
