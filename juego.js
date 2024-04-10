@@ -26,15 +26,15 @@ function seleccionarMascotaJugador() {
     sectionSeleccionarMascota.style.display = "none"
     let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque")
     sectionSeleccionarAtaque.style.display = "block"
-    let inputRana = document.getElementById("Pepe")
-    let inputPulpo = document.getElementById("Pedro")
-    let inputPato = document.getElementById("Luis")
+    let inputPepe = document.getElementById("Pepe")
+    let inputPedro = document.getElementById("Pedro")
+    let inputLuis = document.getElementById("Luis")
     let spanMascotaJugador = document.getElementById("mascota jugador")
-    if (inputRana.checked) {
+    if (inputPepe.checked) {
     spanMascotaJugador.innerHTML = "Pepe"
-    } else if (inputPulpo.checked) {
+    } else if (inputPedro.checked) {
     spanMascotaJugador.innerHTML = "Pedro"
-    } else if (inputPato.checked) {
+    } else if (inputLuis.checked) {
     spanMascotaJugador.innerHTML = "Luis"
     } else {
     alert("selecciona alguna mascota")
@@ -79,21 +79,21 @@ function combate() {
     let spanVidasJugador = document.getElementById("vidas-jugador")
     let spanVidasEnemigo = document.getElementById("vidas-enemigo")
     if(ataqueEnemigo == ataqueJugador) {
-    crearMensaje("empate")
+    crearMensaje(" EMPATE")
     } else if (ataqueJugador == "fuego" && ataqueEnemigo == "tierra") {
-    crearMensaje("ganaste")
+    crearMensaje(" GANASTE")
     vidasEnemigo--
     spanVidasEnemigo.innerHTML = vidasEnemigo
     } else if (ataqueJugador == "agua" && ataqueEnemigo === "fuego") {
-    crearMensaje("ganaste")
+    crearMensaje(" GANASTE")
     vidasEnemigo--
     spanVidasEnemigo.innerHTML = vidasEnemigo
     } else if (ataqueJugador == "tierra" && ataqueEnemigo === "agua") {
-    crearMensaje("ganaste")  
+    crearMensaje(" GANASTE")  
     vidasEnemigo--
     spanVidasEnemigo.innerHTML = vidasEnemigo
     } else {
-    crearMensaje("perdiste")
+    crearMensaje(" PERDISTE")
     vidasJugador--
     spanVidasJugador.innerHTML = vidasJugador
     }
@@ -107,10 +107,20 @@ function revisarVidas() {
     }
 }
 function crearMensaje(resultado) {
+    let spanMascotaEnemigo = document.getElementById("mascota del enemigo")
+    let spanMascotaJugador = document.getElementById("mascota jugador")
     let sectionMensajes = document.getElementById("mensajes")
     let parrafo =  document.createElement("p")
-    parrafo.innerHTML = "Tu pollo ataco con " + ataqueJugador + ",El pollo del enemigo ataco con " + ataqueEnemigo + " " + resultado
+    let parrafoDos = document.createElement("p")
+    let respuesta = document.createElement("p") 
+    parrafo.innerHTML = "Tu pollo " + spanMascotaJugador.innerText+ " ataco con "  + ataqueJugador   
+    parrafoDos.innerHTML = "El pollo " + spanMascotaEnemigo.innerText  + " del enemigo ataco con " + ataqueEnemigo
+    respuesta.innerHTML = resultado
     sectionMensajes.appendChild(parrafo)
+    sectionMensajes.appendChild(parrafoDos)
+    sectionMensajes.appendChild(respuesta)
+    parrafo.style.backgroundColor = "#F7DC6F"
+    parrafoDos.style.backgroundColor = "#F4D03F"
 }
 function crearMensajeFinal(resultadoFinal) {
     let sectionMensajes = document.getElementById("mensajes")
