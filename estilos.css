@@ -1,9 +1,11 @@
-
+body {
+background-color: #FEFC7C ;
+}
 #seleccionar-mascota {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
 }
 #seleccionar-ataque {
     text-align: center;
@@ -12,7 +14,7 @@
     width: 5cm;
     height: 7cm;
     border-radius: 100%;
-    background-color: rgb(243, 243, 176);
+    background-color: white;
     padding: 10px;
     box-sizing: border-box;
     display: flex;
@@ -28,13 +30,13 @@ input {
 }
 .tarjetas {
     display: flex;
-    gap: 30px;
+    gap: 50px;
 }
 .titulo {
-background-color: rgb(223, 223, 179);
+background-color: white;
 }
 .titulo-dos {
-    background-color: rgb(223, 223, 179);
+    background-color: white;
 }
 .imagen-pepe {
     width: 5cm;
@@ -61,16 +63,16 @@ background-color: rgb(223, 223, 179);
     background-color: transparent;
     border: 2px solid white;
     color: black;
-    margin-top: 2cm;
+    margin-top: 3cm;
 }
 .boton-de-ataque {
-    background-color: rgb(230, 230, 150);
+    background-color: white;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 20px;
     border-color: transparent;
     width: 100px;
-    color: white;
+    color: black;
 }
 #mensajes {
     text-align: center;
@@ -84,4 +86,10 @@ background-color: rgb(223, 223, 179);
     width: 100px;
     color: white;
     float: left;
+   text-align: center;
+}
+@media (max-width: 501px) {
+    .tarjetas {
+        flex-direction: column;
+    }
 }
