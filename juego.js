@@ -40,7 +40,7 @@ let mapaBackground = new Image()
 mapaBackground.src = "https://img.freepik.com/vector-premium/paisaje-escena-granja-granero_1308-97467.jpg"
 class Mokepon {
     constructor (nombre, foto, vidas,) {
-    this.nombre = nombre
+    this.nombre = nombre    
     this.foto = foto
     this.vidas = vidas
     this.ataques = []
@@ -295,7 +295,7 @@ function pintarCanvas() {
     mascotaJugadorObjeto.pintarMokepon()
     pepeEnemigo.pintarMokepon
     pedroEnemigo.pintarMokepon
-    luisEnemigo.pintarMokepon
+    luisEnemigo.pintarMokepon   
 }
 function moverDerecha() {
     mascotaJugadorObjeto.velocidadX = 5
