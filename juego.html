@@ -14,22 +14,24 @@
         </div>
         <button id="boton-mascota">Seleccionar</button>
     </section>
+    <section id="ver-mapa">
+        <h1 class="titulo">Recorre el mapa con tu Mokepon</h1>
+        <canvas id="mapa"></canvas>
+        <button onmouseup="detenerMovimiento()" onmousedown="moverArriba()">Arriba</button>
+        <button onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()">Izquierda</button>
+        <button onmouseup="detenerMovimiento()" onmousedown="moverAbajo()">Abajo</button>
+        <button onmouseup="detenerMovimiento()" onmousedown="moverDerecha()">Derecha</button>
+    </section>
     <section id="seleccionar-ataque">   
         <h1>ATAQUE</h1>
         <h2>Elije tu ataque</h2>
-        <p>Tu Pollo <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
-        <p>El Pollo <span id="mascota-del-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
-            <div id="contenedor-ataques">
-    </div> 
+        <p>Tu Pollo <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">0</span> 🏆victorias</p>
+        <p>El Pollo <span id="mascota-del-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">0</span> 🏆victorias</p>
+        <div id="contenedor-ataques">
+        </div> 
     </section>
     <section id="mensajes">
-        <!-- <p id="parrafo-uno"></p>
-        <p id="parrafo-dos"></p>
-        <p id="respuesta-de-ataque"></p> -->
     </section>
-    <div id="resultado"></div>
-    <div id="ataques-del-jugador"></div>
-    <div id="ataques-del-enemigo"></div>
     <section id="reiniciar">
         <button id="boton-reiniciar">Reiniciar</button>
     </section>
