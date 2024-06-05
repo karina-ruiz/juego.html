@@ -93,8 +93,16 @@ background-color: white;
     align-items: center;
     justify-content: center;
 }
-#mapa {
-    border: 2px solid white;
+#ver-mapa button {
+    background-color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: transparent;
+    width: 80px;
+    margin-top: .1em;
+    margin-bottom: .1em;
+    color: black;
 }
 @media (max-width: 501px) {
     .tarjetas {
@@ -107,3 +115,4 @@ background-color: white;
         width: 80px;
     }
 }
+
