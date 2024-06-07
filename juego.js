@@ -258,9 +258,10 @@ function obtenerAtaques() {
     })
 }
 function seleccionarMascotaEnemigo(enemigo) {
+    let mascotaAleatoria = aleatorio(0, mokepones.length -1)
 
-        spanMascotaEnemigo.innerHTML = enemigo.nombre
-        ataquesMokeponEnemigo = enemigo.ataques
+        spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre
+        ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques
         secuenciaAtaque()
     }
 function indexAmbosOponentes(jugador, enemigo) {

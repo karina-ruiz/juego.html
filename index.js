@@ -2,7 +2,7 @@ const express = require("express")
 const cors = require("cors")
 const app = express()
 
-app.use(express.static(`public`)) 
+app.use 
 app.use(cors())
 app.use(express.json())
 
@@ -47,17 +47,18 @@ app.post("/mokepon/:jugadorId", (req, res) => {
     const jugadorId = req.params.jugadorId || ""
     const nombre = req.body.mokepon || ""
     const mokepon = new Mokepon(nombre)
-
+    
     const jugadorIndex = jugadores.findIndex((jugador) => jugadorId === jugador.id)
-
+  
     if (jugadorIndex >= 0) {
-            jugadores[jugadorIndex].asignarMokepon(mokepon)
-        }
-
+      jugadores[jugadorIndex].asignarMokepon(mokepon)
+    }
+    
     console.log(jugadores)
     console.log(jugadorId)
     res.end()
-})
+  })
+  
 
 app.post("/mokepon/:jugadorId/posicion", (req, res) => {
     const jugadorId = req.params.jugadorId || ""
@@ -74,17 +75,18 @@ app.post("/mokepon/:jugadorId/posicion", (req, res) => {
         enemigos
     })
 })
-app.post("/mokepon/:jugadorId/ataques",(req, res) => {
+app.post("/mokepon/:jugadorId/ataques", (req, res) => {
     const jugadorId = req.params.jugadorId || ""
     const ataques = req.body.ataques || []
-
+    
     const jugadorIndex = jugadores.findIndex((jugador) => jugadorId === jugador.id)
-        if (jugadorIndex >= 0) {
-            jugadores[jugadorIndex].asignarAtaques(ataques)
-        }
-
+  
+    if (jugadorIndex >= 0) {
+      jugadores[jugadorIndex].asignarAtaques(ataques)
+    }
+  
     res.end()
-})
+  })
 app.get("/mokepon/:jugadorId/ataques", (req, res) => {
     const jugadorId = req.params.jugadorId || ""
     const jugador = jugadores.find((jugador) => jugador.id === jugadorId)
