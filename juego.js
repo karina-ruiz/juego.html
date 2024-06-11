@@ -152,6 +152,8 @@ function unirseAlJuego() {
 } 
 function seleccionarMascotaJugador() {
 
+    sectionSeleccionarMascota.style.display = "none"
+
         if (inputPepe.checked) {
             spanMascotaJugador.innerHTML = inputPepe.id
             mascotaJugador = inputPepe.id
@@ -163,9 +165,7 @@ function seleccionarMascotaJugador() {
             mascotaJugador = inputLuis.id
         } else {
             alert("selecciona alguna mascota")
-            return
         }
-        sectionSeleccionarMascota.style.display = "none"
 
         seleccionarMokepon(mascotaJugador)
 
@@ -241,7 +241,7 @@ function enviarAtaques() {
             ataques: ataqueJugador
         })
     })
-    intervalo = setInterval(obtenerAtaques, 50)
+    intervalo = setInterval(obtenerAtaques, 5000)
 }
 function obtenerAtaques() {
     fetch(`http://localhost:8080/mokepon/${enemigoId}/ataques`)
@@ -258,12 +258,28 @@ function obtenerAtaques() {
     })
 }
 function seleccionarMascotaEnemigo(enemigo) {
-    let mascotaAleatoria = aleatorio(0, mokepones.length -1)
-
-        spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre
-        ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques
+    spanMascotaEnemigo.innerHTML = enemigo.nombre
+        ataquesMokeponEnemigo = enemigo.ataques
         secuenciaAtaque()
+}
+function ataqueAleatorioEnemigo () {
+    let ataqueAleatorio = aleatorio(0,ataquesMokeponEnemigo.length-1)
+    if(ataqueAleatorio == 0 || ataqueAleatorio == 1) {
+        ataqueEnemigo.push('FUEGO')
+    } else if 
+        (ataqueAleatorio == 3 || ataqueAleatorio == 4) {
+            ataqueEnemigo.push('AGUA')
+        } else {
+            ataqueEnemigo.push('TIERRA')
+        } 
+        console.log(ataqueEnemigo)
+        iniciarPelea()
+}
+function iniciarPelea() {
+    if (ataqueJugador.length === 5) {
+        combate()
     }
+}
 function indexAmbosOponentes(jugador, enemigo) {
     indexAtaqueJugador = ataqueJugador[jugador]
     indexAtaqueEnemigo = ataqueEnemigo[enemigo] 
@@ -309,13 +325,13 @@ function revisarVidas() {
     }
     
 }
-function crearMensaje(resultado) {
+function crearMensaje(mensajes) {
     let parrafo =  document.createElement("p")
     let parrafoDos = document.createElement("p")
     let respuesta = document.createElement("p") 
         parrafo.innerHTML = "Tu pollo " + spanMascotaJugador.innerText + " ataco con "  + indexAtaqueJugador  
         parrafoDos.innerHTML = "El pollo " + spanMascotaEnemigo.innerText  + " del enemigo ataco con " + indexAtaqueEnemigo
-        respuesta.innerHTML = resultado
+        respuesta.innerHTML = mensajes
         sectionMensajes.appendChild(parrafo)
         sectionMensajes.appendChild(parrafoDos)
         sectionMensajes.appendChild(respuesta)
@@ -325,9 +341,6 @@ function crearMensajeFinal(resultadoFinal) {
     let parrafo =  document.createElement("p")
         parrafo.innerHTML = resultadoFinal
         sectionMensajes.appendChild(parrafo)
-        botonFuego.disabled = true
-        botonAgua.disabled = true
-        botonTierra.disabled = true
         sectionReiniciar.style.display = "block"
 }
 function reiniciarJuego() {
@@ -372,7 +385,7 @@ function enviarPosicion(x, y) {
         if (res.ok) {
             res.json()
                 .then(function ({ enemigos }) {
-                console.log(enemigos)
+                    console.log(enemigos)
                     mokeponesEnemigos = enemigos.map(function (enemigo) {
                         let mokeponEnemigo = null
                         const mokeponNombre = enemigo.mokepon.nombre || ""
@@ -444,14 +457,14 @@ function obtenerObjetoMascota() {
 }
 function revisarColision(enemigo) {
     const arribaEnemigo = enemigo.y
-    const abajoEnemigo = enemigo.x + enemigo.alto
+    const abajoEnemigo = enemigo.y + enemigo.alto
     const derechaEnemigo = enemigo.x + enemigo.ancho
     const izquierdaEnemigo = enemigo.x
 
     const arribaMascota = 
         mascotaJugadorObjeto.y
     const abajoMascota = 
-        mascotaJugadorObjeto.x + mascotaJugadorObjeto.alto
+        mascotaJugadorObjeto.y + mascotaJugadorObjeto.alto
     const derechaMascota = 
         mascotaJugadorObjeto.x + mascotaJugadorObjeto.ancho
     const izquierdaMascota = 
