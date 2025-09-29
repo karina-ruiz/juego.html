@@ -152,8 +152,6 @@ function unirseAlJuego() {
 } 
 function seleccionarMascotaJugador() {
 
-    sectionSeleccionarMascota.style.display = "none"
-
         if (inputPepe.checked) {
             spanMascotaJugador.innerHTML = inputPepe.id
             mascotaJugador = inputPepe.id
@@ -165,8 +163,10 @@ function seleccionarMascotaJugador() {
             mascotaJugador = inputLuis.id
         } else {
             alert("selecciona alguna mascota")
+            return
         }
 
+        sectionSeleccionarMascota.style.display = "none"
         seleccionarMokepon(mascotaJugador)
 
         extraerAtaques(mascotaJugador)
